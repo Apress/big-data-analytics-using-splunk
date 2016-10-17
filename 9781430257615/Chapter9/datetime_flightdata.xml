@@ -1,0 +1,18 @@
+<!--
+	Big Data Analytics Using Splunk
+	By Peter Zadrozny and Raghu Kodali
+	Apress, May 2013 ISBN 978-1-4302-5761-5
+	Copyright (C) 2013 Peter Zadrozny and Raghu Kodali
+-->
+
+<datetime>
+  <define name="flightdata_csv_timestamp" extract="year, month, day, hour, minute">
+    <text><![CDATA[(?:[^,]*,){5}(\d+)-(\d+)-(\d+)(?:[^,]*,){26}"(\d\d)(\d\d)"]]></text>
+  </define>
+  <timePatterns>
+    <use name="flightdata_csv_timestamp"/>
+  </timePatterns>
+  <datePatterns>
+    <use name="flightdata_csv_timestamp"/>
+  </datePatterns>
+</datetime>
